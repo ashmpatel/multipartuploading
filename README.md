@@ -37,8 +37,6 @@ This project is for tutorial purposes.<br />
  <br>
         Apache Maven 3.8.1 (05c21c65bdfed0f71a2f2ada8b84da59348c4c5d)
  <br>
-        Maven home: c:\apache-maven-3.8.1\bin\..
- <br>
         Java version: 17.0.2, vendor: Oracle Corporation, runtime: c:\jdk-17.0.2
  <br>
         Default locale: en_GB, platform encoding: Cp1252

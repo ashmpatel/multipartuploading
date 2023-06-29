@@ -18,10 +18,17 @@ public class TradeProcessor {
 
     // the header for the return results. We need to know the column names for the csv file returned
     private final static String HEADER = "date,product_name,currency,price";
-    private final static String NEWLINE_SEPARATOR = "\n";
     private final static String PRODUCT_LOOKUP_DATA = "classpath:products.csv";
 
+    //TODO: Read the productmap once in a separate bean and use that here.
 
+    /**
+     * Accepts the streamign tradedata from the Controller, joins it to the ProducrMap for the product_id lookup and
+     * then sends the results in csv format back to the controller.
+     * @param tradeData
+     * @return
+     * @throws IOException
+     */
     public List<String> processTrades(Mono<List<String>> tradeData) throws IOException {
         // I do Not need to read this lookup file each time for a request. I am showing that in case it changes
         // between requests, we can read it and process as standard.

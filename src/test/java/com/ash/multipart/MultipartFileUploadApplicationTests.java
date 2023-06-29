@@ -3,7 +3,7 @@ package com.ash.multipart;
 import com.ash.multipart.model.EnrichedTradePayload;
 import com.ash.multipart.model.Product;
 import com.ash.multipart.utils.ListenForProductData;
-import com.ash.multipart.utils.ProcessTradeDate;
+import com.ash.multipart.utils.ProcessTradeData;
 import com.ash.multipart.utils.ReadMemoryMappedFile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +15,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.client.MultipartBodyBuilder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.util.MultiValueMap;
 import org.springframework.util.ResourceUtils;
@@ -97,7 +96,7 @@ public class MultipartFileUploadApplicationTests {
         List<String> fileData= new ArrayList<>();
         fileData.add(data);
         fileData.add(data2);
-        ProcessTradeDate test = new ProcessTradeDate(productMap, fileData);
+        ProcessTradeData test = new ProcessTradeData(productMap, fileData);
         List<EnrichedTradePayload> t = test.process();
         EnrichedTradePayload first = t.get(0);
         assert(first.toString().equals("20160101,Treasury Bills Domestic,EUR,10.0"));
@@ -120,7 +119,7 @@ public class MultipartFileUploadApplicationTests {
         List<String> fileData= new ArrayList<>();
         fileData.add(data);
         fileData.add(data2);
-        ProcessTradeDate test = new ProcessTradeDate(productMap, fileData);
+        ProcessTradeData test = new ProcessTradeData(productMap, fileData);
         // this will cause a null pointer as the date can not be parsed as its invalid to there is no date object
         // so I expect a NullPointerException
         try {
@@ -147,7 +146,7 @@ public class MultipartFileUploadApplicationTests {
         String data = "20160101,999,EUR,10";
         List<String> fileData= new ArrayList<>();
         fileData.add(data);
-        ProcessTradeDate test = new ProcessTradeDate(productMap, fileData);
+        ProcessTradeData test = new ProcessTradeData(productMap, fileData);
         List<EnrichedTradePayload> t = test.process();
         EnrichedTradePayload first = t.get(0);
         // the product id was not in the product map so I expect Missing Product Name in the trade processing BUT all other values

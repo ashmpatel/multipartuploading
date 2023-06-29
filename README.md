@@ -70,9 +70,10 @@ This project is for tutorial purposes.<br />
  <li>Use Streams to process the data that comes in the file upload</li>
  <li>Spark has streaming methods that can be used to stream process the file data</li>
  <li>We can upload the whole file onto disk storage and then use the memory mapped code incouded
-to process this file and lookup in the products data as we read line by line</li>
+to process this file and lookup in the products data as we read line by line.
+Look at the class ProcessTradeData included that shows how this can be done.</li>
 <li>
-The trade data can be split into chunka dn each can be uploaded and processed
+The trade data can be split into chunks dn each can be uploaded and processed
 in parallel then the results joined. Completeable Futures and threads can be 
 used to do this.
 </li>

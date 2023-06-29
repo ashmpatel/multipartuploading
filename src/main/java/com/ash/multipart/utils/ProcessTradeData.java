@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * This is the callback that gets called by the mem mapped file reader each time a row is successfully read.
  */
-public class ProcessTradeDate implements CallBackListener {
+public class ProcessTradeData implements CallBackListener {
 
     private Map<Long, Product> productMap = Collections.emptyMap();
     private List<String> results;
@@ -21,7 +21,7 @@ public class ProcessTradeDate implements CallBackListener {
 
     private static final String PRODUCT_LOOKUP_ERROR = "Missing Product Name";
 
-    public ProcessTradeDate(Map productMap , List results) {
+    public ProcessTradeData(Map productMap , List results) {
         this.productMap = productMap;
         this.results = results;
     }

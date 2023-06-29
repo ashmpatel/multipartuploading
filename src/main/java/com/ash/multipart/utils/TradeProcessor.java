@@ -42,7 +42,7 @@ public class TradeProcessor {
         csvResults.add(HEADER);
         // Use a Reactive consumer to send results back as the data comes in
         tradeData.subscribe(data -> {
-            ProcessTradeDate temp = new ProcessTradeDate(productMap, data);
+            ProcessTradeData temp = new ProcessTradeData(productMap, data);
             List<EnrichedTradePayload> res = temp.process();
             for (EnrichedTradePayload t : res) {
                 csvResults.add(t.toString());

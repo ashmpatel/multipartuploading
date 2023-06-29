@@ -70,9 +70,9 @@ This project is for tutorial purposes.<br />
 to process this trade file and lookup in the products data as we read line by line.
 Look at the class ProcessTradeData included that shows how this can be done.</li>
 <li>
-The trade data can be split into chunks dn each can be uploaded and processed
+The trade data can be split into chunks and each can be uploaded and processed
 in parallel then the results joined. Completeable Futures and threads can be 
-used to do this.
+used to do this. <code>Akka framework </code>makes it easy to use message passing to coordinate this processing.
 </li>
 <h3>Note</h3>
 <li>There are a few tests included that tests the core functionality of looking up the trade product ids

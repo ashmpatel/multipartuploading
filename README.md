@@ -68,10 +68,14 @@ This project is for tutorial purposes.<br />
 
 <h3>Things that can be improved</h3>
  <li>Use Streams to process the data that comes in the file upload</li>
- <li>Sprak has streamign methods that can be used to stream process the file data</li>
- <li>We can uplaod the whole file onto disk storage and then use the memory mapped code incouded
+ <li>Spark has streaming methods that can be used to stream process the file data</li>
+ <li>We can upload the whole file onto disk storage and then use the memory mapped code incouded
 to process this file and lookup in the products data as we read line by line</li>
-
+<li>
+The trade data can be split into chunka dn each can be uploaded and processed
+in parallel then the results joined. Completeable Futures and threads can be 
+used to do this.
+</li>
 <h3>Note</h3>
 <li>There are a few tests included that tests the core functionality of looking up the trade product ids
 and the memory mapped file processign code. I need to add tests for the RESTful api side.

@@ -155,4 +155,9 @@ public class MultipartFileUploadApplicationTests {
         assert(first.toString().equals("20160101,Missing Product Name,EUR,10.0"));
     }
 
+    //TODO: Add test for empty tradefile
+    //TODO: Add test for empty product map
+    //TODO: Add test for malformed trade file
+    //TODO: Add test for malformed product file
+    //TODO: Split trade data into chunks and process chunk sin threads for performance
 }

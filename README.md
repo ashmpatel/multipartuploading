@@ -5,10 +5,10 @@ This project is for tutorial purposes.<br />
 <h2>Description & Feature</h2>
 <ul>
   <li>Implements a multi-part way to upload large csv files</li>
-    <li>Used Reactive Sprign libraries and MemoryMappedFiles to use very little memory when
+    <li>Used Reactive Spring libraries and MemoryMappedFiles to use very little memory when
         processing large files and little GC.
     </li>
-  <li>Single file upload. Shown implementaion using <code>Mono < FilePart ></code></li>
+  <li>Single file upload. Shown implementation using <code>Mono < FilePart ></code></li>
   <li>Two test files are included in this project - products.csv and trade.csv, both in the resources folder</li>
 </ul>
 <br/>
@@ -24,9 +24,8 @@ This project is for tutorial purposes.<br />
    </li>
       </li>  
       <br>
-        c:\jdk-17.0.2
- <br>
         java -version
+<br>
         java version "17.0.2" 2022-01-18 LTS
  <br>
         Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
@@ -51,12 +50,12 @@ This project is for tutorial purposes.<br />
 
 <h3>How to upload a file to test this code</h3>
     <li>Open Postman to access the api of this project</li>
-    <li>Set url at<br /><code>http://localhost:8080/api/vi/enrich</code> and use POST method</li>
+    <li>Set url at<br /><code>http://localhost:8080/api/vi/enrich </code> and use POST method</li>
     <li>From body tab select <code>form-data</code></li>
     <li>Select type <code>File</code> for a key and name the key as <code>file</code></li>
     <li>In value section choose a file from your PC by browsing to upload. IN this example , select trades.csv. See screenshot in resources folder of the code</li>
     <li>Alternatively you can use curl like this.
-        Start the projects main class : MultipartFileUploadApplication
+        Start the projects main class : <code>MultipartFileUploadApplication</code>
         Go to the the command prompt.
         Make sure the file trades.csv is in that folder OR copy it from the resources folder to THIS folder
         you are in right now.
@@ -69,8 +68,8 @@ This project is for tutorial purposes.<br />
 <h3>Things that can be improved</h3>
  <li>Use Streams to process the data that comes in the file upload</li>
  <li>Spark has streaming methods that can be used to stream process the file data</li>
- <li>We can upload the whole file onto disk storage and then use the memory mapped code incouded
-to process this file and lookup in the products data as we read line by line.
+ <li>We can upload the whole file onto disk storage and then use the memory mapped code included
+to process this trade file and lookup in the products data as we read line by line.
 Look at the class ProcessTradeData included that shows how this can be done.</li>
 <li>
 The trade data can be split into chunks dn each can be uploaded and processed
@@ -79,7 +78,8 @@ used to do this.
 </li>
 <h3>Note</h3>
 <li>There are a few tests included that tests the core functionality of looking up the trade product ids
-and the memory mapped file processign code. I need to add tests for the RESTful api side.
+and the memory mapped file processing code. I need to add tests for the RESTful api side.
+Strightforward matter of using WebClient etc.
 </li>
 
 <li>

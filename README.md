@@ -11,21 +11,21 @@ This project is for tutorial purposes.<br />
   <li>Single file upload. Shown implementation using <code>Mono < FilePart ></code></li>
   <li>Two test files are included in this project - products.csv and trade.csv, both in the resources folder</li>
 </ul>
-<br/>
+
 
 <h3>Steps</h3>
 <ul>
-  <li><h4>Upload a trade file</h4>
+  <li><h4>Build the project</h4>
   
   <ol>
     <li>Build the project using : mvn clean install 
-    </br>
-     Uses Jdk 17.0.2
-   </li>
-      </li>  
+      </br>
+       Uses Jdk 17.0.2
+    </li>
+  </li>  
       <br>
         java -version
-<br>
+ <br>
         java version "17.0.2" 2022-01-18 LTS
  <br>
         Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
@@ -62,7 +62,6 @@ This project is for tutorial purposes.<br />
         you are in right now.
         Then run: <code>curl --request POST --form file=@trade.csv http://localhost:8080/api/v1/enrich>/code>
   </ol>
-
 </li>
 </ul>
 
